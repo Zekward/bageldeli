@@ -9,6 +9,13 @@ import {
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 
+import { Fraunces } from "next/font/google";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["900"],
+});
+
 export default function Home() {
   return (
     <div className="min-h-screen relative text-white">
@@ -70,8 +77,11 @@ export default function Home() {
 
 
         <main className="min-h-screen flex flex-col items-center justify-center w-full px-3 py-6">
-          <h1 className="text-7xl font-semibold mb-4">
-            Mount Sinai Bagel Deli
+          <h1 className={`${fraunces.className} text-7xl font-black leading-tight mb-4 text-white
+  [text-shadow:2px_2px_0_#000]`}>
+            MOUNT SINAI 
+            <br />
+            BAGEL & DELI
           </h1>
         </main>
       </div>
