@@ -1,15 +1,5 @@
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu"
-
 import { Fraunces } from "next/font/google";
+import { SiteHeader } from "@/components/ui/site-header";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -25,60 +15,20 @@ export default function Home() {
       />
       <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10">
-        <header className="w-full border-b">
-          <div className="mx-auto max-w-3xl px-3 py-3 flex items-center justify-between">
-            <NavigationMenu className = "ml-auto font-semibold">
-              <NavigationMenuList className="justify-end">
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="#menu" className="px-3 py-2 text-sm">
-                    Menu
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="#hours" className="px-3 py-2 text-sm">
-                    Hours
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="#location" className="px-3 py-2 text-sm">
-                    Location
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="#vip" className="px-3 py-2 text-sm">
-                    VIP
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="#about-us" className="px-3 py-2 text-sm">
-                    About Us
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="#contact" className="px-3 py-2 text-sm">
-                    Contact
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
-
-        </header>
+        <SiteHeader />
 
 
 
 
         <main className="min-h-screen flex flex-col items-center justify-center w-full px-3 py-6">
-          <h1 className={`${fraunces.className} text-7xl font-black leading-tight mb-4 text-white
-  [text-shadow:2px_2px_0_#000]`}>
+          <h1 className={`${fraunces.className} font-black leading-tight mb-4 text-white
+            [text-shadow:2px_2px_0_#000] text-center 
+            md:text-left text-5xl 
+            sm:text-6xl md:text-7xl mx-auto md:mx-0
+          `}>
+
+
+
             MOUNT SINAI 
             <br />
             BAGEL & DELI
@@ -86,15 +36,6 @@ export default function Home() {
         </main>
       </div>
     </div>
-
-
-
-
-
-
-
-
-    
   );
 }
 
