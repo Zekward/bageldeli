@@ -14,11 +14,11 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Menu } from "lucide-react"
 
 const NAV_ITEMS = [
-    { href: "#menu", label: "Menu" },
-    { href: "#deals", label: "Catering and Deals"},
-    { href: "#find-us", label: "Find Us" }, /* find us includes location, hours, and contact */ 
-    { href: "#about-us", label: "About Us" },
-    { href: "#vip", label: "VIP" },
+    { href: "menu", label: "Menu" },
+    { href: "discounts", label: "Discounts"},
+    { href: "find-us", label: "Find Us" }, /* find us includes location, hours, and contact */ 
+    { href: "about-us", label: "About Us" },
+    { href: "vip", label: "VIP" },
 ]
 
 export function SiteHeader() {
