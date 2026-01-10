@@ -41,11 +41,10 @@ export default function DiscountForm({ onSuccess }: SignupFormProps) {
             email,
         }),
     });
-    
+
     onSuccess({ firstName, lastName, phone, email });
 }
-
-
+ 
     return (
         <form onSubmit={handleSubmit} className = "space-y-4 mt-4">
             <InputGroup>
