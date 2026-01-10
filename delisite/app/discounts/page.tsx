@@ -16,22 +16,16 @@ export default function DiscountsPage() {
     const [customer, setCustomer] = useState<Customer | null>(null);
 
     return (
-
-
-
         <div className="min-h-screen flex items-center justify-center bg-muted/40 px-4">
             <div className="w-full max-w-md rounded-xl border bg background p-6 shadow-sm">
                 <h1 className="text-2xl font-bold tracking-tight">
-                    Get 10% Off
+                    Claim a free bagel w/ cream cheese!!!
                 </h1>
                 <p className="text-sm text-muted-foreground mt-1">
                     Enter your info and show this screen to the cashier
                 </p>
                 <DiscountForm onSuccess={setCustomer} />
             </div>
-
-            
         </div>
-
     );
 }

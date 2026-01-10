@@ -24,15 +24,30 @@ export default function DiscountForm({ onSuccess }: SignupFormProps) {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
 
-    function handleSubmit(e: React.FormEvent) {
-        e.preventDefault();
-        if (!firstName || !lastName || !phone || !email) return;
-        onSuccess({ firstName, lastName, phone, email})
-    }
+    async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!firstName || !lastName || !phone || !email) return;
+
+    const visitorId = localStorage.getItem("visitor_id");
+
+    await fetch("/api/claim-discount", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            visitorId,
+            firstName,
+            lastName,
+            phone,
+            email,
+        }),
+    });
+    
+    onSuccess({ firstName, lastName, phone, email });
+}
 
 
     return (
-        <form onSubmit={handleSubmit} className = "space-y-4 my-4">
+        <form onSubmit={handleSubmit} className = "space-y-4 mt-4">
             <InputGroup>
                 <InputGroupInput 
                     placeholder="First name"
