@@ -12,6 +12,9 @@ type Customer = {
 
 
 
+
+
+
 export default function DiscountsPage() {
     const [customer, setCustomer] = useState<Customer | null>(null);
 
