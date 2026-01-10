@@ -1,5 +1,6 @@
 import { Fraunces } from "next/font/google";
 import { SiteHeader } from "@/components/ui/site-header";
+import Image from "next/image";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -17,18 +18,21 @@ export default function Home() {
       <div className="relative z-10">
         <SiteHeader />
         <main className="min-h-screen flex flex-col items-center justify-center w-full px-3 py-6">
-          <h1 className={`${fraunces.className} font-black leading-tight mb-4 text-white
-            [text-shadow:2px_2px_0_#000] text-center 
-            md:text-left text-5xl 
-            sm:text-6xl md:text-7xl mx-auto md:mx-0
-          `}>
-            MOUNT SINAI 
-            <br />
-            BAGEL & DELI
-          </h1>
+          <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl ">
+            <Image
+              src="/delilogo.png"
+              alt="Mount Sinai Bagel Deli"
+              width={1000}
+              height={1000}
+              className="w-full h-auto object-contain"
+              priority
+            />
+          </div>
+           
         </main>
       </div>
     </div>
   );
 }
+
 
