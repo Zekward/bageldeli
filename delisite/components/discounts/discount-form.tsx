@@ -1,18 +1,67 @@
 "use client";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+    CheckIcon,
+    MailIcon,
+    PhoneIcon,
+} from "lucide-react"
+import { 
+    InputGroup,
+    InputGroupAddon,
+    InputGroupInput
+} from "@/components/ui/input-group";
 
-export default function DiscountForm() {
+
+type SignupFormProps = {
+    onSuccess: (data: { firstName: string; lastName: string; phone: string; email: string; }) => void;
+}
+
+
+export default function DiscountForm({ onSuccess }: SignupFormProps) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
+
+    function handleSubmit(e: React.FormEvent) {
+        e.preventDefault();
+        if (!firstName || !lastName || !phone || !email) return;
+        onSuccess({ firstName, lastName, phone, email})
+    }
+
+
     return (
-        <form>
-            <input placeholder="First name" />
-            <input placeholder="Last name" />
-            <input placeholder="Phone number" />
-            <input placeholder="Email (optional)" />
-            <button type="submit">Get 10% Off</button>
+        <form onSubmit={handleSubmit} className = "space-y-4 my-4">
+            <InputGroup>
+                <InputGroupInput 
+                    placeholder="First name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                />
+            </InputGroup>
+            <InputGroup>
+                <InputGroupInput 
+                    placeholder="Last name" 
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                />
+            </InputGroup>
+            <InputGroup>
+                <InputGroupInput
+                    placeholder="Phone number" 
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                />
+            </InputGroup>
+            <InputGroup>
+                <InputGroupInput
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+            </InputGroup>
+            <Button type="submit" className="w-full">Get Discount</Button>
         </form>
     );
 }
