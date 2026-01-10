@@ -25,7 +25,7 @@ export default function DiscountsPage() {
                     Claim a free bagel w/ cream cheese!!!
                 </h1>
                 <p className="text-sm text-muted-foreground mt-1">
-                    Enter your info and show this screen to the cashier
+                    Enter your info and show this screen to the cashier.
                 </p>
                 <DiscountForm onSuccess={setCustomer} />
             </div>
