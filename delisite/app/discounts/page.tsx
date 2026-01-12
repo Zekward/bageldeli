@@ -15,9 +15,6 @@ export default function DiscountsPage() {
     const [customer, setCustomer] = useState<Customer | null>(null);
     const [claimed, setClaimed] = useState(false);
 
-
-
-
     return (
         <div className="min-h-screen flex items-center justify-center bg-muted/40 px-4">
             <div className="w-full max-w-md rounded-xl border bg background p-6 shadow-sm">

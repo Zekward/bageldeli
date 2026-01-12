@@ -18,12 +18,12 @@ export default function Home() {
       <div className="relative z-10">
         <SiteHeader />
         <main className="min-h-screen flex flex-col items-center justify-center w-full px-3 py-6">
-          <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl ">
+          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
             <Image
-              src="/delilogo.png"
+              src="/delilogo.jpg"
               alt="Mount Sinai Bagel Deli"
-              width={1000}
-              height={1000}
+              width={800}
+              height={700}
               className="w-full h-auto object-contain"
               priority
             />
