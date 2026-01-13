@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SiteHeader } from "@/components/ui/site-header";
 
 const menuImages = [
     "/menu/menu1.png",
@@ -9,7 +10,8 @@ const menuImages = [
 
 export default function MenuPage() {
     return (
-        <div className="min-h-screen bg-zinc-200">
+        <div className="min-h-screen bg-[#230c09] text-white">
+            <SiteHeader />
             {/* Content wrapper */}
             <div className="mx-auto max-w-md md:max-w-2xl lg:max-w-3xl bg-white">
                 {menuImages.map((src, i) => (

@@ -12,6 +12,9 @@ import {
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
+import Image from "next/image";
+
+
 
 const NAV_ITEMS = [
     { href: "menu", label: "Menu" },
@@ -23,8 +26,20 @@ const NAV_ITEMS = [
 
 export function SiteHeader() {
     return (
-        <header className="w-full border-b">
+        <header className="w-full">
             <div className="flex items-center justify-between px-4 sm:px-6 lg:px-10 py-3">
+                <a href="/" className="flex items-center gap-2">
+                    <Image
+                        src="/logo.png"
+                        alt="Mt. Sinai Bagel & Deli"
+                        width={140}
+                        height={40}
+                        priority
+                    />
+                </a>
+
+
+
 
                 {/* larger screen nav bar */}
                 <div className="ml-auto hidden md:block">
@@ -32,7 +47,7 @@ export function SiteHeader() {
                         <NavigationMenuList className="justify-end">
                             {NAV_ITEMS.map((item) => (
                                 <NavigationMenuItem key={item.href}>
-                                    <NavigationMenuLink href={item.href} className="px-3 py-2 text-sm">
+                                    <NavigationMenuLink href={item.href} className="px-3 py-2 text-base">
                                         {item.label}
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
