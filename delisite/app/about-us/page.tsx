@@ -1,5 +1,14 @@
 import Image from "next/image";
 import { SiteHeader } from "@/components/ui/site-header";
+import { ImageCard } from "@/components/ui/card"
+import { Bebas_Neue } from "next/font/google";
+
+
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-bebas",
+});
 
 
 export default function AboutPage()  {
@@ -10,12 +19,11 @@ export default function AboutPage()  {
 
                 {/* LEFT: Image */}
                 <div className="relative h-[300px] w-full md:h-auto md:w-1/2">
-                <Image
-                    src="/about-us/bagel-cafe-image.png" // replace with your image path
-                    alt="Mount Sinai Bagel Deli"
-                    fill
-                    className="object-cover"
-                    priority
+
+                <ImageCard
+                          title=""
+                          subtitle=""
+                          image="/about-us/bagel-cafe-image.png"
                 />
                 </div>
 
@@ -23,7 +31,7 @@ export default function AboutPage()  {
                <div className="flex w-full items-center px-6 py-12 md:w-1/2 md:px-16">
                     <div className="max-w-md space-y-6">
                         
-                        <h2 className="text-3xl font-semibold tracking-tight">
+                        <h2 className={`text-6xl font-semibold tracking-tight ${bebasNeue.className}`}>
                         Our Story: Where Every Breakfast Tastes Like Home
                         </h2>
 
