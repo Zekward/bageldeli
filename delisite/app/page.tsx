@@ -1,4 +1,6 @@
 import { Fraunces } from "next/font/google";
+import { Lobster } from "next/font/google";
+import { Bebas_Neue } from "next/font/google";
 import { SiteHeader } from "@/components/ui/site-header";
 import Image from "next/image";
 import { ImageCard } from "@/components/ui/card"
@@ -6,6 +8,18 @@ import { ImageCard } from "@/components/ui/card"
 const fraunces = Fraunces({
   subsets: ["latin"],
   weight: ["900"],
+});
+
+const lobster = Lobster({
+  subsets: ["latin"], 
+  weight: "400",
+  variable: "--font-lobster",
+})
+
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-bebas",
 });
 
 export default function Home() {
@@ -20,6 +34,8 @@ export default function Home() {
           image="/bagel.jpg"
           titleClassName="font-script"
           subtitleClassName="font-montserrat uppercase"
+          titleFontClass={bebasNeue.className}
+          subtitleFontClass={lobster.className}
         />
       
       </main>

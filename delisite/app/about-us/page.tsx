@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SiteHeader } from "@/components/ui/site-header";
 
+
 export default function AboutPage()  {
     return (
         <section className="w-full bg-white">

@@ -6,6 +6,9 @@ type ImageCardProps = {
   image: string
   titleClassName?: string
   subtitleClassName?: string
+  titleFontClass?: string
+  subtitleFontClass?: string
+  textColor?: string
 }
 
 export function ImageCard({
@@ -14,6 +17,10 @@ export function ImageCard({
   image,
   titleClassName = "",
   subtitleClassName = "",
+  titleFontClass = "",
+  subtitleFontClass,
+  textColor = "#fbf2e0"
+
 }: ImageCardProps) {
   return (
     <section className="px-2 sm:px-4">
@@ -33,16 +40,30 @@ export function ImageCard({
 
         {/* Centered text */}
         <div className="relative z-10 flex h-full items-center justify-center text-center px-4">
-          <div className="space-y-2">
+          <div className="space-y-1">
+            {/* TITLE */}
             <h1
-              className={`text-white text-4xl md:text-6xl font-extrabold ${titleClassName}`}
+              style={{ color: textColor }}
+              className={`
+                ${titleFontClass}
+                font-bold
+                text-[clamp(5.5rem,12vw,14rem)]
+                leading-[0.8]
+                tracking-[0.02em]
+              `}
             >
               {title}
             </h1>
 
+            {/* SUBTITLE */}
             {subtitle && (
               <p
-                className={`text-white text-xl md:text-2xl tracking-widest ${subtitleClassName}`}
+                style={{ color: textColor }}
+                className={`
+                  ${subtitleFontClass}
+                  text-[clamp(2.5rem,4.5vw,4.5rem)]
+                  leading-none
+                `}
               >
                 {subtitle}
               </p>
