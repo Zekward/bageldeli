@@ -14,9 +14,12 @@
 
 Currently, the button in popup "view menu" points to /online-order. Eventually we need to move this so that it is in /menu. This is because we currently have the physical menu pasted in /menu. 
 
+And online ordering doesn't look great on the phone
+
 Color Scheme:
 - F67E7D: light coral
 - 91818A: rosy granite
 - 70260A: brandy
 - 160600: coffee bean
 - F4EBBE: lemon chiffon
+- FBAF00: amber flame
