@@ -18,6 +18,7 @@ import Image from "next/image";
 
 const NAV_ITEMS = [
     { href: "menu", label: "Menu" },
+    { href: "online-menu", label: "Order Online"},
     { href: "discounts", label: "Discounts"},
     { href: "find-us", label: "Find Us" }, /* find us includes location, hours, and contact */ 
     { href: "about-us", label: "About Us" },
