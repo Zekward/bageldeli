@@ -62,11 +62,11 @@ export function FloatingCard({ onClose }: FloatingCardProps) {
 
                     {/* MENU CTA BUTTON */}
                     <a
-                        href="/menu"
+                        href="/online-menu"
                         className="rounded-full bg-[#160600] px-8 py-3 text-sm font-medium
                         tracking-wide text-white transition hover:bg-zinc-700"
                     >
-                        VIEW MENU
+                        VIEW MENUS
                     </a>
 
                     <p className={`${montserrat.className} mt-4 text-base sm:text-lg font-medium text-[#160600]`}>
