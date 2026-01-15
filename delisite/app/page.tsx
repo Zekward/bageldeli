@@ -1,9 +1,13 @@
+
+
 import { Fraunces } from "next/font/google";
 import { Lobster } from "next/font/google";
 import { Bebas_Neue } from "next/font/google";
 import { SiteHeader } from "@/components/ui/site-header";
-import Image from "next/image";
+
 import { ImageCard } from "@/components/ui/card"
+import { FloatingCard } from "@/components/popup/floating-card";
+import { MenuPopupController } from "@/components/controllers/menu-popup-controller";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -39,6 +43,8 @@ export default function Home() {
         />
       
       </main>
+
+      <MenuPopupController />
       
     </div>
   );

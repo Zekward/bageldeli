@@ -19,7 +19,7 @@ export function ImageCard({
   subtitleClassName = "",
   titleFontClass = "",
   subtitleFontClass,
-  textColor = "#fbf2e0"
+  textColor = "#f4ebbe"
 
 }: ImageCardProps) {
   return (
