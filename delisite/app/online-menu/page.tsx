@@ -10,7 +10,13 @@ import { breakfastPlatters } from "@/components/menu-items/breakfast/platters";
 import { breakfastGrilledCheeses } from "@/components/menu-items/breakfast/grilled-cheese";
 import { breakfastSweetTooth } from "@/components/menu-items/breakfast/sweet-tooth";
 import { breakfastOmelettes } from "@/components/menu-items/breakfast/omelettes";
-import { breakfastSpecials } from "@/components/menu-items/breakfast/specials";
+import { breakfastCombos } from "@/components/menu-items/breakfast/combos";
+import { lunchAvocadoToast } from "@/components/menu-items/lunch/avocado-toast";
+import { lunchChickenCutlet } from "@/components/menu-items/lunch/chicken-cutlet";
+import { lunchWraps } from "@/components/menu-items/lunch/wraps";
+import { lunchSandwiches } from "@/components/menu-items/lunch/sandwiches";
+import { lunchSalads } from "@/components/menu-items/lunch/salads";
+import { lunchBlt } from "@/components/menu-items/lunch/blt";
 
 const TABS = ["Breakfast", "Lunch", "Catering", "Bagels"] as const;
 
@@ -70,14 +76,17 @@ export default function MenuPage() {
                         <MenuSection title="Grilled Cheeses" color={TAB_COLORS.Breakfast} items={breakfastGrilledCheeses} />
                         <MenuSection title="Pancakes/French Toast" color={TAB_COLORS.Breakfast} items={breakfastSweetTooth} />
                         <MenuSection title="Omelettes" color={TAB_COLORS.Breakfast} items={breakfastOmelettes} />
-                        <MenuSection title="Breakfast Specials" color={TAB_COLORS.Breakfast} items={breakfastSpecials} />
+                        <MenuSection title="Breakfast Combos" color={TAB_COLORS.Breakfast} items={breakfastCombos} />
                         </>
                     )}
                     {activeTab === "Lunch" && (
                         <>
-                        <MenuSectionBox title="Sandwiches" color={TAB_COLORS.Lunch} />
-                        <MenuSectionBox title="Wraps" color={TAB_COLORS.Lunch} />
-                        <MenuSectionBox title="Salads" color={TAB_COLORS.Lunch} />
+                        <MenuSection title="Avocado Toast" color={TAB_COLORS.Lunch} items={lunchAvocadoToast}/>
+                        <MenuSection title="The Cutlet Club" color={TAB_COLORS.Lunch} items={lunchChickenCutlet}/>
+                        <MenuSection title="Chicken Wraps" color={TAB_COLORS.Lunch} items={lunchWraps}/>
+                        <MenuSection title="Deli Sandwiches" color={TAB_COLORS.Lunch} items={lunchSandwiches}/>
+                        <MenuSection title="Salads" color={TAB_COLORS.Lunch} items={lunchSalads}/>
+                        <MenuSection title="BLTs" color={TAB_COLORS.Lunch} items={lunchBlt}/>
                         </>
                     )}
                     {activeTab === "Catering" && (

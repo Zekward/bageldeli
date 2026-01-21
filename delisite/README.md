@@ -9,6 +9,7 @@
 - gallery scaffolding for pictures
 - email listserv 
 - links to instagram/facebook/tiktok
+- qr code!!!
 - review section at bottom 
 - refactor entire base
 
@@ -23,3 +24,15 @@ Color Scheme:
 - 160600: coffee bean
 - F4EBBE: lemon chiffon
 - FBAF00: amber flame
+
+
+
+## NEW PRIORITIES
+- fix menu
+- place catering menu 
+- put bagels design page
+- google reviews posting with link
+- about us page 
+- add other rotating images for home screen
+- get rid of VIP page and menu page
+- fix discounts page
