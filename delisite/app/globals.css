@@ -6,8 +6,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --color-brand: #70260a;
+  --color-brand-coral: #f67e7d;
+  --color-brand-gray: #91818a;
+  --color-brand-gold: #fbaf00;
+  --color-brand-ink: #160600;
+  --color-brand-cream: #f4ebbe;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -121,5 +126,133 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Accessibility / quality-of-life defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset anchor targets so a sticky site header doesn't cover them */
+:target,
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Always show a visible focus ring for keyboard users, using a brand color */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print helpers (usable outside the print media query too) */
+.print-only {
+  display: none;
+}
+
+/* Clean, ink-friendly printing for menus and pages.
+   Only affects @media print — no impact on screen rendering. */
+@media print {
+  /* Hide non-content chrome: nav header, footer, popups, floating CTAs,
+     sticky category tabs, search box, and anything opted out via helpers. */
+  header,
+  footer,
+  nav,
+  [data-print-hide],
+  .no-print,
+  [role="dialog"],
+  [aria-modal="true"],
+  [data-popup],
+  [data-offer-popup],
+  [data-floating-card],
+  [data-back-to-top],
+  [data-cta],
+  [data-category-tabs],
+  [data-tab-bar],
+  [data-search],
+  [role="search"],
+  input[type="search"] {
+    display: none !important;
+  }
+
+  /* Reveal print-only content when needed */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Ink-friendly: black text on white, drop background images/colors */
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    color: #000 !important;
+  }
+
+  /* Remove sticky/fixed positioning so nothing floats over printed content */
+  .sticky,
+  .fixed,
+  [style*="position: sticky"],
+  [style*="position: fixed"] {
+    position: static !important;
+  }
+
+  /* Expand scroll containers so all content prints, not just the viewport slice */
+  .overflow-auto,
+  .overflow-y-auto,
+  .overflow-x-auto,
+  .overflow-scroll,
+  .overflow-y-scroll,
+  .overflow-x-scroll,
+  .overflow-hidden {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  /* Avoid awkward page breaks inside menu items, cards, and sections */
+  section,
+  article,
+  li,
+  figure,
+  table,
+  [data-menu-item],
+  [data-menu-section],
+  [data-card],
+  .card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep headings with the content that follows them */
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 }

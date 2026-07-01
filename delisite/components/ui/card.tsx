@@ -4,22 +4,26 @@ type ImageCardProps = {
   title: string
   subtitle?: string
   image: string
-  titleClassName?: string
-  subtitleClassName?: string
+  alt?: string
   titleFontClass?: string
   subtitleFontClass?: string
   textColor?: string
+  sizes?: string
+  quality?: number
+  priority?: boolean
 }
 
 export function ImageCard({
   title,
   subtitle,
   image,
-  titleClassName = "",
-  subtitleClassName = "",
+  alt,
   titleFontClass = "",
   subtitleFontClass,
-  textColor = "#f4ebbe"
+  textColor = "#f4ebbe",
+  sizes = "100vw",
+  quality,
+  priority = true
 
 }: ImageCardProps) {
   return (
@@ -29,9 +33,11 @@ export function ImageCard({
         {/* Background image */}
         <Image
           src={image}
-          alt={title}
+          alt={alt ?? title}
           fill
-          priority
+          priority={priority}
+          sizes={sizes}
+          quality={quality}
           className="object-cover"
         />
 

@@ -1,26 +1,18 @@
 type MenuSectionBoxProps = {
-  title: string;
   color: string;
   children?: React.ReactNode;
 };
 
-export function MenuSectionBox({ title, color, children }: MenuSectionBoxProps) {
+// Outer card/frame only: colored border, rounding, padding and page-break
+// behavior. Everything inside (title, divider, items) is owned by MenuSection.
+export function MenuSectionBox({ color, children }: MenuSectionBoxProps) {
   return (
     <div
+      data-card
       style={{ borderColor: color }}
-      className="w-full rounded-3xl border-2 p-8 min-h-[220px] break-inside-avoid mb-8"
+      className="w-full break-inside-avoid rounded-2xl border-2 p-6 sm:p-8 min-h-[220px] mb-8 shadow-sm"
     >
-      <h2
-        style={{ color }}
-        className="text-2xl font-bold mb-4 uppercase tracking-wide"
-      >
-        {title}
-      </h2>
-
-      {/* Placeholder content */}
-      <div className="space-y-5">
-        {children}
-      </div>
+      {children}
     </div>
   );
 }
